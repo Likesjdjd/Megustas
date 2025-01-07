@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour ma femme Carolina</title>
+    <style>
+        body {
+            background-color: #2a2a40;
+            background-image: url('https://cdn.pixabay.com/photo/2016/03/27/22/16/tulips-1283601_960_720.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #d1a3ff;
+            margin-top: 20px;
+        }
+        .emoji-buttons {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .emoji-button {
+            font-size: 40px;
+            margin: 0 15px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+        }
+        .emoji-button:hover {
+            transform: scale(1.2);
+        }
+        .card {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #d1a3ff;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .timeline {
+            margin: 50px 0;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        .timeline-event {
+            margin: 20px 0;
+            padding: 10px;
+            border-left: 3px solid #d1a3ff;
+        }
+        .timeline-content {
+            margin-left: 20px;
+        }
+        .timeline-content h3 {
+            margin: 0;
+            color: #d1a3ff;
+        }
+        .timeline-content p {
+            margin: 5px 0 0;
+        }
+        #heart {
+            font-size: 100px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-top: 20px;
+        }
+        #heart:hover {
+            transform: scale(1.2);
+        }
+        #all-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="heart" onclick="revealAll()">❤️</div>
+    <div id="all-content">
+        <h1>Pour ma femme Carolina</h1>
+        <div class="emoji-buttons">
+            <button class="emoji-button" onclick="openCard(1)">🌷</button>
+            <button class="emoji-button" onclick="openCard(2)">❤️</button>
+            <button class="emoji-button" onclick="openCard(3)">🌙</button>
+        </div>
+        <p style="color: #fff; font-size: 18px; margin-top: 10px;">
+            Te amo demasiado y espero hacerte muy feliz mi amor 💕
+        </p>
+        <div class="card" id="card1">
+            <p>Querida,</p>
+            <p>Los tulipanes representan la belleza de nuestro amor. Eres mi inspiración eterna.</p>
+        </div>
+        <div class="card" id="card2">
+            <p>Amor mío,</p>
+            <p>Tu corazón es el tesoro más valioso de mi vida. Contigo soy feliz.</p>
+        </div>
+        <div class="card" id="card3">
+            <p>Mi luna,</p>
+            <p>En la noche más oscura, eres la luz que ilumina mi camino. Te amo siempre.</p>
+        </div>
+        <div class="timeline">
+            <h2>Línea de Tiempo</h2>
+            <div class="timeline-event">
+                <div class="timeline-content">
+                    <h3>2023</h3>
+                    <p>Este año te conocí y mi vida empezó cambiar, cuando convivimos la primera vez fue como si desde antes te conociera fue mágico, 
+                        no recuerdo muy bien los días exactos pero sí cómo empezamos a hablar más por una llamada en donde ahí hicimos nuestro grupo con Fernando. 
+                         Desde ahí nos hicimos más unidos y me di cuenta que te amo y que me gustas. No podíamos ser nada en ese momento, pero siempre estábamos juntos.</p>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-content">
+                    <h3>2024</h3>
+                    <p>En enero fue cuando nos hicimos más amigasos y desde entonces he tenido fotos de Lucka. 
+                     El primero de febrero fue cuando fuimos al Soumaya y antes de eso el 31 de enero Fernando y yo fuimos a tu casa por primera vez. 
+                        Te fuiste distanciando durante un tiempo y yo sentí feo porque pues yo te amo, te adoro.
+                          Entendí por qué y ya pasó. Nos dejamos de hablar y el 30 de noviembre fue nuestro primer beso ENTRE MUCHAS COMILLAS porque antes de eso fue la peda, 
+                           pero no me acuerdo qué día fue exactamente, creo que fue el 20 de febrero corrigeme si no JAJAJAJA</p>
+                </div>
+            </div>
+            <div class="timeline-event">
+                <div class="timeline-content">
+                    <h3>2025</h3>
+                    <p>Este año apenas va empezando, pero será un buen año, digo yo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        function revealAll() {
+            const heart = document.getElementById('heart');
+            const allContent = document.getElementById('all-content');
+
+            // Animación de confetti
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+
+            // Ocultar el corazón y mostrar todo el contenido
+            heart.style.display = 'none';
+            allContent.style.display = 'block';
+        }
+        function openCard(cardNumber) {
+            document.querySelectorAll('.card').forEach(card => card.style.display = 'none');
+            document.getElementById('card' + cardNumber).style.display = 'block';
+        }
+    </script>
+<div id="countdown" style="margin-top: 20px; font-size: 24px; color: #d1a3ff;"></div>
+<script>
+    const targetTimeKey = "targetTime";
+    let targetTime = 1751414400000;  // 2 de julio de 2025 a las 12:00 AM
+
+    const countdown = document.getElementById('countdown');
+
+    const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetTime - now;
+
+        if (distance <= 0) {
+            clearInterval(interval);
+            countdown.style.display = 'none';
+        } else {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            countdown.textContent = `Faltan ${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos.`;
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
